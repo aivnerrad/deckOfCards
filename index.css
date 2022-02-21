@@ -1,0 +1,41 @@
+body{
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.pile-of-cards, .played-card {
+  min-height: 7em;
+  min-width: 5em;
+  border: 1px solid black;
+  border-radius: .3em;
+  box-shadow: 0 0 1em rgba(0,0,0, 0.8);
+}
+.pile-of-cards{
+  background-image: url("./playingcardbackside.png");
+}
+
+.played-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.played-card::before, .played-card::after {
+  position: absolute;
+  content: attr(data-value);
+}
+
+.played-card::before{
+  top: .5em;
+  left: .5em;
+}
+
+.played-card::after{
+  bottom: .5em;
+  right: .5em;
+  transform: rotate(180deg);
+}
